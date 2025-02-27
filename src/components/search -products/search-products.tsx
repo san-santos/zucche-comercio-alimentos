@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import axios from "axios";
@@ -20,7 +22,7 @@ export default function SearchProducts() {
     event.preventDefault();
 
     if (consulta.trim() === "") {
-      alert("Digite algo para consultar.");
+      alert("Digite o produto a ser consultado.");
       setIsVisible(false);
       return;
     }
@@ -64,19 +66,19 @@ export default function SearchProducts() {
   }, []);
 
   return (
-    <div className="w-full flex justify-center bg-slate-500">
-      <div className="w-[80%] flex flex-col items-center bg-slate-400 p-4">
-        <h2 className="text-lg font-semibold mb-4">Título</h2>
+    <div className="w-full flex justify-center bg-slate-200">
+      <div className="w-[80%] flex flex-col items-center bg-[#D9D9D9] p-4">
+        <h2 className="text-lg font-semibold mb-4 text-[#333333]">Título</h2>
         <form action="" className="w-full flex justify-end mb-4">
           <input
             type="text"
             value={consulta}
             onChange={(e) => setConsulta(e.target.value)}
             placeholder="Consulte o produto"
-            className="w-[180px] text-black border p-2"
+            className="w-[180px] text-[333333] border p-2"
           />
           <button
-            className="w-[120px] bg-[#0d9900] ml-[16px] p-2 text-white rounded"
+            className="w-[120px] bg-[#333333] ml-[16px] p-2 text-white rounded"
             onClick={handleClick}
             disabled={loading}
           >

@@ -5,8 +5,14 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = {
-  images: {
-    domains: ['images.pexels.com'],
+  images: {    
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'thumbs.dreamstime.com',
+          pathname: '/**',
+        },
+      ],   
   },
 }
 
